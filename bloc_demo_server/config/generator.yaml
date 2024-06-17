@@ -1,0 +1,3 @@
+type: server
+
+client_package_path: ../bloc_demo_client
