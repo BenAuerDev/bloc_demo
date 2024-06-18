@@ -8,7 +8,7 @@ import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:bloc_demo_client/bloc_demo_client.dart';
 import 'package:bloc_demo_flutter/src/features/auth/application/is_authenticated.dart';
 import 'package:bloc_demo_flutter/src/features/auth/presentation/auth_screen.dart';
-import 'package:bloc_demo_flutter/screens/home_screen.dart';
+import 'package:bloc_demo_flutter/home_screen.dart';
 
 late Client client;
 late SessionManager sessionManager;
