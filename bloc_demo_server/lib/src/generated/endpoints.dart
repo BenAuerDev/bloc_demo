@@ -9,30 +9,31 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
-import '../endpoints/example_endpoint.dart' as _i2;
-import 'package:serverpod_auth_server/serverpod_auth_server.dart' as _i3;
+import '../endpoints/lunch_spot_endpoint.dart' as _i2;
+import 'package:bloc_demo_server/src/generated/lunch_spot.dart' as _i3;
+import 'package:serverpod_auth_server/serverpod_auth_server.dart' as _i4;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
   void initializeEndpoints(_i1.Server server) {
     var endpoints = <String, _i1.Endpoint>{
-      'example': _i2.ExampleEndpoint()
+      'lunchSpot': _i2.LunchSpotEndpoint()
         ..initialize(
           server,
-          'example',
+          'lunchSpot',
           null,
         )
     };
-    connectors['example'] = _i1.EndpointConnector(
-      name: 'example',
-      endpoint: endpoints['example']!,
+    connectors['lunchSpot'] = _i1.EndpointConnector(
+      name: 'lunchSpot',
+      endpoint: endpoints['lunchSpot']!,
       methodConnectors: {
-        'hello': _i1.MethodConnector(
-          name: 'hello',
+        'proposeLunchSpot': _i1.MethodConnector(
+          name: 'proposeLunchSpot',
           params: {
-            'name': _i1.ParameterDescription(
-              name: 'name',
-              type: _i1.getType<String>(),
+            'spot': _i1.ParameterDescription(
+              name: 'spot',
+              type: _i1.getType<_i3.LunchSpot>(),
               nullable: false,
             )
           },
@@ -40,13 +41,43 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['example'] as _i2.ExampleEndpoint).hello(
+              (endpoints['lunchSpot'] as _i2.LunchSpotEndpoint)
+                  .proposeLunchSpot(
             session,
-            params['name'],
+            params['spot'],
           ),
-        )
+        ),
+        'getLunchSpots': _i1.MethodConnector(
+          name: 'getLunchSpots',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['lunchSpot'] as _i2.LunchSpotEndpoint)
+                  .getLunchSpots(session),
+        ),
+        'voteForLunchSpot': _i1.MethodConnector(
+          name: 'voteForLunchSpot',
+          params: {
+            'spotId': _i1.ParameterDescription(
+              name: 'spotId',
+              type: _i1.getType<int>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['lunchSpot'] as _i2.LunchSpotEndpoint)
+                  .voteForLunchSpot(
+            session,
+            params['spotId'],
+          ),
+        ),
       },
     );
-    modules['serverpod_auth'] = _i3.Endpoints()..initializeEndpoints(server);
+    modules['serverpod_auth'] = _i4.Endpoints()..initializeEndpoints(server);
   }
 }
