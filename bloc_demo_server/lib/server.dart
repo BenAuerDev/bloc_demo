@@ -32,6 +32,14 @@ void run(List<String> args) async {
 
   auth.AuthConfig.set(auth.AuthConfig(
     validationCodeLength: 4,
+    sendValidationEmail: (session, email, validationCode) async {
+      print(validationCode);
+      return true;
+    },
+    sendPasswordResetEmail: (session, userInfo, validationCode) async {
+      print(validationCode);
+      return true;
+    },
   ));
 
   // Start the server.
