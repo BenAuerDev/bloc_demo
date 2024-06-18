@@ -1,0 +1,20 @@
+# In this directory (bloc_demo_server/lib/src/models) you can create your models
+# after altering this file, run `serverpod generate` from bloc_demo_server directory
+
+# Running `serverpod generate` will create a data class for this model which can be used in the client and server like:
+# ```dart 
+# List<LunchSpot> lunchSpots;
+# lunchSpots.add(LunchSpot(name: 'My Lunch Spot', category: LunchSpotCategory.italian, votes: 0));
+#```
+# When the table property is set, a database table will be created aswell.
+# The Table can then be accessed from the Endpoint like:
+# ```dart
+# LunchSpot.db.insert(lunchSpot);
+# ```
+
+class: LunchSpot
+table: lunch_spot
+fields:
+  name: String
+  category: LunchSpotCategory
+  votes: int

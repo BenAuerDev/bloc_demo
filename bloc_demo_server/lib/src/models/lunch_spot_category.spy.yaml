@@ -1,0 +1,11 @@
+enum: LunchSpotCategory
+serialized: byName
+values:
+    - burgers
+    - pizza
+    - sushi
+    - tacos
+    - thai
+    - vegan
+    - vegetarian
+    
