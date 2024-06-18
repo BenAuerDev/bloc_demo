@@ -35,6 +35,7 @@ dependencies:
   serverpod_auth_shared_flutter: ^2.0.1
   flutter_bloc: ^8.1.6
   serverpod_auth_email_flutter: ^2.0.1
+  meta: ^1.12.0
 
 
 dev_dependencies:
