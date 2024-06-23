@@ -1,12 +1,43 @@
 # Lunch Spot Voting
 
+This is a demo app for my talk at the Flutter Holland Meetup on July 27th in Amsterdam. 
+
+It features:
+- Basic Serverpod Email Authentication
+- LunchSpotVoting
+  1. Propose LunchSpot (Save entry in DB)
+  2. Get LunchSpots (Read from DB)
+  3. Vote for Lunchspot (Update entry in DB) 
+
+WIP: Article link still missing
+
+https://github.com/BenAuerDev/bloc_demo/assets/136239531/0bfc80ef-57b1-410f-84e4-8f95600b1a1e
+
+
+
+
+## In case you haven't already install the following:
+
+### Install Flutter and Dart. 
+You can follow the instructions on the official Flutter website: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
+
+### Install Docker. 
+You can follow the instructions on the official Docker website: [Docker Installation Guide](https://docs.docker.com/get-docker/)
+
+### Install Serverpod CLI
+Once you have Flutter and Docker installed and configured, open up a terminal and install Serverpod by running:
+```bash
+dart pub global activate serverpod_cli
+```
+
+## Clone Project
 To clone run:
 
 ```dart
 git clone "https://github.com/BenAuerDev/bloc_demo.git"
 ```
 
-## Server Setup
+### Server Setup
 
 Create `/bloc_demo/bloc_demo_server/config/passwords.yaml` and add the development passwords as in `docker-compose.yaml`:
 
@@ -40,7 +71,7 @@ If your database already has all the changes you just run:
 dart bin/main.dart
 ```
 
-## Flutter Setup
+### Flutter Setup
 
 then all you need to do is navigate to `bloc_demo_flutter` and run:
 
