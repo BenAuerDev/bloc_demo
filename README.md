@@ -9,7 +9,7 @@ It features:
   2. Get LunchSpots (Read from DB)
   3. Vote for Lunchspot (Update entry in DB) 
 
-WIP: Article link still missing
+## For everyone who couldn't attend you can find the tutorial [here](https://medium.com/@ben.auer.dev/managing-state-with-bloc-in-a-full-stack-flutter-serverpod-app-a403239ad301).
 
 https://github.com/BenAuerDev/bloc_demo/assets/136239531/0bfc80ef-57b1-410f-84e4-8f95600b1a1e
 
@@ -71,7 +71,7 @@ If your database already has all the changes you just run:
 dart bin/main.dart
 ```
 
-### Flutter Setup
+### Flutter
 
 then all you need to do is navigate to `bloc_demo_flutter` and run:
 
